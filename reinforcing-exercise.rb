@@ -108,19 +108,32 @@ article = hash[:response][:results]
 article.each do |entry|
   entry[:views] = 0
 end
-
 # puts article
 
 
 # 2. Write a method called read_article that randomly selects an article and increases the articles "views" by one each time it's randomly selected.
 
 def read_article(article)
-  if article.sample = self
-    article[:views] += 1
+  random = article.sample
+    random[:views] += 1
+end
+# puts article
+
+
+# 3. Write a method called display_views that iterates through the articles and displays their titles and view counts, like so:
+
+def display_views(article)
+  article.each do |entry|
+    puts entry[:webTitle]
+    puts entry[:views]
   end
 end
 
-puts article.read_article
-# 3. Write a method called display_views that iterates through the articles and displays their titles and view counts, like so:
 
 # 4. Try calling read_article several times and then display_views to verify that your code works.
+
+10.times do read_article(article) end
+
+puts article
+
+display_views(article)
